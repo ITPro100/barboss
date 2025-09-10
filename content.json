@@ -12,10 +12,22 @@
     "no_russia": "❌ NOT SHIP TO russia 🇷🇺"
   },
   "navigation": [
-    {"name": "Shop", "url": "shop.html"},
-    {"name": "About", "url": "about.html"},
-    {"name": "Lookbook", "url": "#lookbook"},
-    {"name": "Contacts", "url": "contacts.html"}
+    {
+      "name": "Shop",
+      "url": "shop.html"
+    },
+    {
+      "name": "About",
+      "url": "about.html"
+    },
+    {
+      "name": "Lookbook",
+      "url": "#lookbook"
+    },
+    {
+      "name": "Contacts",
+      "url": "contacts.html"
+    }
   ],
   "categories": [
     {
@@ -61,11 +73,14 @@
       "category": "pants",
       "price": 21999,
       "currency": "грн",
-      "sizes": ["33/L", "34/L-XL"],
-      "img": "/assets/products/si-ghost-pants.jpg",
+      "sizes": [
+        "33/L",
+        "34/L-XL"
+      ],
+      "img": "/assets/products/si-pants-real.jpg",
       "gallery": [
-        "/assets/products/si-ghost-pants.jpg",
-        "/assets/products/si-ghost-pants-2.jpg"
+        "/assets/products/si-pants-real.jpg",
+        "/assets/products/si-ghost-pants-001.jpg"
       ],
       "description": "STONE ISLAND GHOST PIECE CUPRO COTTON REGULAR PANTS. Premium quality from official supplier.",
       "new": true,
@@ -78,8 +93,11 @@
       "category": "pants",
       "price": 17999,
       "currency": "грн",
-      "sizes": ["XL-XXL", "XXL-3XL"],
-      "img": "/assets/products/si-camo-pants.jpg",
+      "sizes": [
+        "XL-XXL",
+        "XXL-3XL"
+      ],
+      "img": "/assets/products/si-camo-pants-001.jpg",
       "gallery": [
         "/assets/products/si-camo-pants.jpg"
       ],
@@ -94,7 +112,9 @@
       "category": "tracksuits",
       "price": 44999,
       "currency": "грн",
-      "sizes": ["M"],
+      "sizes": [
+        "M"
+      ],
       "img": "/assets/products/si-tracksuit-001.jpg",
       "gallery": [
         "/assets/products/si-tracksuit-001.jpg"
@@ -110,7 +130,9 @@
       "category": "tracksuits",
       "price": 35999,
       "currency": "грн",
-      "sizes": ["M"],
+      "sizes": [
+        "M"
+      ],
       "img": "/assets/products/si-alligator-tracksuit.jpg",
       "gallery": [
         "/assets/products/si-alligator-tracksuit.jpg"
@@ -127,14 +149,34 @@
       "price": 5999,
       "currency": "грн",
       "sizes": {
-        "White": ["M", "L", "XL", "XXL", "3XL"],
-        "Khaki": ["M", "L", "XL"],
-        "Gray": ["S", "XL", "XXL", "3XL"],
-        "Navy": ["XXL"],
-        "Black": ["XL"]
+        "White": [
+          "M",
+          "L",
+          "XL",
+          "XXL",
+          "3XL"
+        ],
+        "Khaki": [
+          "M",
+          "L",
+          "XL"
+        ],
+        "Gray": [
+          "S",
+          "XL",
+          "XXL",
+          "3XL"
+        ],
+        "Navy": [
+          "XXL"
+        ],
+        "Black": [
+          "XL"
+        ]
       },
-      "img": "/assets/products/cp-shirt-001.jpg",
+      "img": "/assets/products/cp-hoodie-real.jpg",
       "gallery": [
+        "/assets/products/cp-hoodie-real.jpg",
         "/assets/products/cp-shirt-001.jpg"
       ],
       "description": "C.P. COMPANY COTTON SHIRT. Available in multiple colors.",
@@ -148,7 +190,9 @@
       "category": "shorts",
       "price": 9999,
       "currency": "грн",
-      "sizes": ["50/L"],
+      "sizes": [
+        "50/L"
+      ],
       "img": "/assets/products/cp-shorts-001.jpg",
       "gallery": [
         "/assets/products/cp-shorts-001.jpg"
@@ -165,8 +209,13 @@
       "price": 16999,
       "currency": "грн",
       "sizes": {
-        "Beige": ["32/M-L"],
-        "Khaki": ["32/M-L", "33/L"]
+        "Beige": [
+          "32/M-L"
+        ],
+        "Khaki": [
+          "32/M-L",
+          "33/L"
+        ]
       },
       "img": "/assets/products/si-ghost-shorts.jpg",
       "gallery": [
@@ -183,10 +232,14 @@
       "category": "jackets",
       "price": 0,
       "currency": "грн",
-      "sizes": ["L", "XL"],
-      "img": "/assets/products/si-ice-jacket.jpg",
+      "sizes": [
+        "L",
+        "XL"
+      ],
+      "img": "/assets/products/si-jacket-real.jpg",
       "gallery": [
-        "/assets/products/si-ice-jacket.jpg"
+        "/assets/products/si-jacket-real.jpg",
+        "/assets/products/si-ice-jacket-001.jpg"
       ],
       "description": "STONE ISLAND 462E1 CAMOUFLAGE NYLON REP ICE JACKET. Contact for price.",
       "new": true,
@@ -200,7 +253,9 @@
       "category": "tracksuits",
       "price": 49999,
       "currency": "грн",
-      "sizes": ["L"],
+      "sizes": [
+        "L"
+      ],
       "img": "/assets/products/si-micro-yarn-tracksuit.jpg",
       "gallery": [
         "/assets/products/si-micro-yarn-tracksuit.jpg"
@@ -217,7 +272,7 @@
       "price": 0,
       "currency": "грн",
       "sizes": [],
-      "img": "/assets/products/cp-cargo-shorts.jpg",
+      "img": "/assets/products/cp-cargo-shorts-sold.jpg",
       "gallery": [
         "/assets/products/cp-cargo-shorts.jpg"
       ],
@@ -227,6 +282,10 @@
     }
   ],
   "lookbook": [
+    {
+      "img": "/assets/lookbook/look-real-01.jpg",
+      "title": "Kiev Streets"
+    },
     {
       "img": "/assets/lookbook/look-01.jpg",
       "title": "Street Legend"
@@ -241,15 +300,11 @@
     },
     {
       "img": "/assets/lookbook/look-04.jpg",
-      "title": "Kiev Streets"
+      "title": "Premium Culture"
     },
     {
       "img": "/assets/lookbook/look-05.jpg",
-      "title": "Premium Only"
-    },
-    {
-      "img": "/assets/lookbook/look-06.jpg",
-      "title": "Stone Island Culture"
+      "title": "Stone Island Life"
     }
   ],
   "social": {
