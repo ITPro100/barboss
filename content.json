@@ -1,12 +1,15 @@
 {
   "brand": {
-    "name": "Barboss Room",
-    "slogan": "Premium streetwear. For those who hustle.",
-    "description": "Curated selection of authentic premium streetwear from Stone Island, C.P. Company, and other iconic brands.",
-    "phone": "+7 999 123 45 67",
-    "telegram": "@barboss_room",
-    "address": "Moscow, Russia",
-    "email": "info@barbossroom.com"
+    "name": "BARBOSS ROOM",
+    "slogan": "Premium streetwear. Квадратура знает.",
+    "description": "Официальный поставщик Stone Island, C.P. Company и других премиальных брендов в Украине.",
+    "phone": "+380 XX XXX XX XX",
+    "telegram": "@barbos_shop",
+    "telegram_bot": "@Barbooss_bot",
+    "address": "🇺🇦 Україна, м.Київ, вул. Шота Руставели 27Б",
+    "email": "info@barbosroom.com",
+    "shipping_info": "✅ Worldwide shipping 🌎",
+    "no_russia": "❌ NOT SHIP TO russia 🇷🇺"
   },
   "navigation": [
     {"name": "Shop", "url": "shop.html"},
@@ -23,11 +26,11 @@
       "url": "shop.html?cat=jackets"
     },
     {
-      "id": "hoodies",
-      "name": "Худи",
-      "nameEn": "Hoodies",
-      "img": "/assets/img/category-hoodies.jpg",
-      "url": "shop.html?cat=hoodies"
+      "id": "tracksuits",
+      "name": "Костюмы",
+      "nameEn": "Tracksuits",
+      "img": "/assets/img/category-tracksuits.jpg",
+      "url": "shop.html?cat=tracksuits"
     },
     {
       "id": "pants",
@@ -37,169 +40,264 @@
       "url": "shop.html?cat=pants"
     },
     {
-      "id": "accessories",
-      "name": "Аксессуары",
-      "nameEn": "Accessories",
-      "img": "/assets/img/category-accessories.jpg",
-      "url": "shop.html?cat=accessories"
+      "id": "shorts",
+      "name": "Шорты",
+      "nameEn": "Shorts",
+      "img": "/assets/img/category-shorts.jpg",
+      "url": "shop.html?cat=shorts"
     }
   ],
   "brands": [
     "Stone Island",
     "C.P. Company",
-    "Ma.Strum",
-    "Peaceful Hooligan",
-    "Weekend Offender"
+    "Stone Island Shadow Project",
+    "Stone Island Junior"
   ],
   "products": [
     {
-      "id": "si-jacket-001",
-      "name": "Stone Island Ghost Piece Jacket",
-      "brand": "Stone Island",
-      "category": "jackets",
-      "price": 1450,
-      "sizes": ["S", "M", "L", "XL"],
-      "img": "/assets/products/si-jacket-001.jpg",
-      "gallery": [
-        "/assets/products/si-jacket-001.jpg",
-        "/assets/products/si-jacket-001-2.jpg",
-        "/assets/products/si-jacket-001-3.jpg"
-      ],
-      "description": "Iconic Ghost Piece from Stone Island's FW24 collection. Water-resistant Raso-R 3L fabric with removable badge.",
-      "new": true,
-      "bestseller": true
-    },
-    {
-      "id": "cp-hoodie-001",
-      "name": "C.P. Company Lens Hoodie",
-      "brand": "C.P. Company",
-      "category": "hoodies",
-      "price": 480,
-      "sizes": ["M", "L", "XL", "XXL"],
-      "img": "/assets/products/cp-hoodie-001.jpg",
-      "gallery": [
-        "/assets/products/cp-hoodie-001.jpg",
-        "/assets/products/cp-hoodie-001-2.jpg"
-      ],
-      "description": "Classic C.P. Company hoodie with signature lens detail on the hood. 100% cotton fleece.",
-      "new": true,
-      "bestseller": false
-    },
-    {
-      "id": "si-pants-001",
-      "name": "Stone Island Cargo Pants",
+      "id": "si-ghost-pants-001",
+      "name": "STONE ISLAND GHOST PIECE CUPRO COTTON REGULAR PANTS",
       "brand": "Stone Island",
       "category": "pants",
-      "price": 620,
-      "sizes": ["30", "32", "34", "36"],
-      "img": "/assets/products/si-pants-001.jpg",
+      "price": 21999,
+      "currency": "грн",
+      "sizes": ["33/L", "34/L-XL"],
+      "img": "/assets/products/si-ghost-pants.jpg",
       "gallery": [
-        "/assets/products/si-pants-001.jpg"
+        "/assets/products/si-ghost-pants.jpg",
+        "/assets/products/si-ghost-pants-2.jpg"
       ],
-      "description": "Technical cargo pants with multiple pockets and adjustable details. Stretch cotton gabardine.",
-      "new": false,
-      "bestseller": true
-    },
-    {
-      "id": "si-beanie-001",
-      "name": "Stone Island Wool Beanie",
-      "brand": "Stone Island",
-      "category": "accessories",
-      "price": 145,
-      "sizes": ["One Size"],
-      "img": "/assets/products/si-beanie-001.jpg",
-      "gallery": [
-        "/assets/products/si-beanie-001.jpg"
-      ],
-      "description": "Premium wool beanie with removable Stone Island badge. Made in Italy.",
-      "new": false,
-      "bestseller": true
-    },
-    {
-      "id": "cp-jacket-002",
-      "name": "C.P. Company Metropolis Series Jacket",
-      "brand": "C.P. Company",
-      "category": "jackets",
-      "price": 1280,
-      "sizes": ["S", "M", "L"],
-      "img": "/assets/products/cp-jacket-002.jpg",
-      "gallery": [
-        "/assets/products/cp-jacket-002.jpg"
-      ],
-      "description": "Urban protection jacket from Metropolis Series. Pro-Tek fabric with taped seams.",
+      "description": "STONE ISLAND GHOST PIECE CUPRO COTTON REGULAR PANTS. Premium quality from official supplier.",
       "new": true,
-      "bestseller": false
+      "sold": false
     },
     {
-      "id": "ms-hoodie-001",
-      "name": "Ma.Strum Training Hoodie",
-      "brand": "Ma.Strum",
-      "category": "hoodies",
-      "price": 320,
-      "sizes": ["S", "M", "L", "XL"],
-      "img": "/assets/products/ms-hoodie-001.jpg",
+      "id": "si-camo-pants-001",
+      "name": "STONE ISLAND CAMO GRID NYLON REGULAR PANTS",
+      "brand": "Stone Island",
+      "category": "pants",
+      "price": 17999,
+      "currency": "грн",
+      "sizes": ["XL-XXL", "XXL-3XL"],
+      "img": "/assets/products/si-camo-pants.jpg",
       "gallery": [
-        "/assets/products/ms-hoodie-001.jpg"
+        "/assets/products/si-camo-pants.jpg"
       ],
-      "description": "Military-inspired training hoodie with Ma.Strum's signature detailing.",
+      "description": "STONE ISLAND CAMO GRID NYLON REGULAR PANTS. Authentic product with original tags.",
+      "new": true,
+      "sold": false
+    },
+    {
+      "id": "si-tracksuit-001",
+      "name": "STONE ISLAND DISSOLVING GRID CAMO TRACKSUIT",
+      "brand": "Stone Island",
+      "category": "tracksuits",
+      "price": 44999,
+      "currency": "грн",
+      "sizes": ["M"],
+      "img": "/assets/products/si-tracksuit-001.jpg",
+      "gallery": [
+        "/assets/products/si-tracksuit-001.jpg"
+      ],
+      "description": "STONE ISLAND DISSOLVING GRID CAMO ON REGENERATED NYLON REGULAR FULL ZIP TRACKSUIT. Premium collection.",
+      "new": true,
+      "sold": false
+    },
+    {
+      "id": "si-alligator-tracksuit",
+      "name": "STONE ISLAND ALLIGATOR CAMO COTTON TRACKSUIT",
+      "brand": "Stone Island",
+      "category": "tracksuits",
+      "price": 35999,
+      "currency": "грн",
+      "sizes": ["M"],
+      "img": "/assets/products/si-alligator-tracksuit.jpg",
+      "gallery": [
+        "/assets/products/si-alligator-tracksuit.jpg"
+      ],
+      "description": "STONE ISLAND ALLIGATOR CAMO COTTON TRACKSUIT. Exclusive design.",
+      "new": true,
+      "sold": false
+    },
+    {
+      "id": "cp-shirt-001",
+      "name": "C.P. COMPANY COTTON SHIRT",
+      "brand": "C.P. Company",
+      "category": "shirts",
+      "price": 5999,
+      "currency": "грн",
+      "sizes": {
+        "White": ["M", "L", "XL", "XXL", "3XL"],
+        "Khaki": ["M", "L", "XL"],
+        "Gray": ["S", "XL", "XXL", "3XL"],
+        "Navy": ["XXL"],
+        "Black": ["XL"]
+      },
+      "img": "/assets/products/cp-shirt-001.jpg",
+      "gallery": [
+        "/assets/products/cp-shirt-001.jpg"
+      ],
+      "description": "C.P. COMPANY COTTON SHIRT. Available in multiple colors.",
+      "new": true,
+      "sold": false
+    },
+    {
+      "id": "cp-shorts-001",
+      "name": "C.P. COMPANY FLATT NYLON SHORTS",
+      "brand": "C.P. Company",
+      "category": "shorts",
+      "price": 9999,
+      "currency": "грн",
+      "sizes": ["50/L"],
+      "img": "/assets/products/cp-shorts-001.jpg",
+      "gallery": [
+        "/assets/products/cp-shorts-001.jpg"
+      ],
+      "description": "C.P. COMPANY FLATT NYLON SHORTS. Perfect for summer.",
+      "new": true,
+      "sold": false
+    },
+    {
+      "id": "si-ghost-shorts",
+      "name": "STONE ISLAND GHOST PIECE O-VENTILE® SHORTS",
+      "brand": "Stone Island",
+      "category": "shorts",
+      "price": 16999,
+      "currency": "грн",
+      "sizes": {
+        "Beige": ["32/M-L"],
+        "Khaki": ["32/M-L", "33/L"]
+      },
+      "img": "/assets/products/si-ghost-shorts.jpg",
+      "gallery": [
+        "/assets/products/si-ghost-shorts.jpg"
+      ],
+      "description": "STONE ISLAND GHOST PIECE_O-VENTILE® REGULAR SHORTS. Premium summer collection.",
+      "new": true,
+      "sold": false
+    },
+    {
+      "id": "si-ice-jacket-001",
+      "name": "STONE ISLAND 462E1 CAMOUFLAGE NYLON REP ICE JACKET",
+      "brand": "Stone Island",
+      "category": "jackets",
+      "price": 0,
+      "currency": "грн",
+      "sizes": ["L", "XL"],
+      "img": "/assets/products/si-ice-jacket.jpg",
+      "gallery": [
+        "/assets/products/si-ice-jacket.jpg"
+      ],
+      "description": "STONE ISLAND 462E1 CAMOUFLAGE NYLON REP ICE JACKET. Contact for price.",
+      "new": true,
+      "sold": false,
+      "priceOnRequest": true
+    },
+    {
+      "id": "si-micro-yarn-tracksuit",
+      "name": "STONE ISLAND GARMENT DYED MICRO YARN TRACKSUIT",
+      "brand": "Stone Island",
+      "category": "tracksuits",
+      "price": 49999,
+      "currency": "грн",
+      "sizes": ["L"],
+      "img": "/assets/products/si-micro-yarn-tracksuit.jpg",
+      "gallery": [
+        "/assets/products/si-micro-yarn-tracksuit.jpg"
+      ],
+      "description": "STONE ISLAND GARMENT DYED MICRO YARN WITH PRIMALOFT-TC TRACKSUIT. Top tier quality.",
+      "new": true,
+      "sold": false
+    },
+    {
+      "id": "cp-cargo-shorts-sold",
+      "name": "C.P. COMPANY TWILL STRETCH CARGO SHORTS",
+      "brand": "C.P. Company",
+      "category": "shorts",
+      "price": 0,
+      "currency": "грн",
+      "sizes": [],
+      "img": "/assets/products/cp-cargo-shorts.jpg",
+      "gallery": [
+        "/assets/products/cp-cargo-shorts.jpg"
+      ],
+      "description": "❌ПРОДАНО/SOLD❌",
       "new": false,
-      "bestseller": false
+      "sold": true
     }
   ],
   "lookbook": [
     {
       "img": "/assets/lookbook/look-01.jpg",
-      "title": "Urban Explorer"
-    },
-    {
-      "img": "/assets/lookbook/look-02.jpg",
-      "title": "Night Runner"
-    },
-    {
-      "img": "/assets/lookbook/look-03.jpg",
-      "title": "City Warrior"
-    },
-    {
-      "img": "/assets/lookbook/look-04.jpg",
       "title": "Street Legend"
     },
     {
+      "img": "/assets/lookbook/look-02.jpg",
+      "title": "Urban Explorer"
+    },
+    {
+      "img": "/assets/lookbook/look-03.jpg",
+      "title": "Квадратура"
+    },
+    {
+      "img": "/assets/lookbook/look-04.jpg",
+      "title": "Kiev Streets"
+    },
+    {
       "img": "/assets/lookbook/look-05.jpg",
-      "title": "Concrete Jungle"
+      "title": "Premium Only"
     },
     {
       "img": "/assets/lookbook/look-06.jpg",
-      "title": "Shadow Walker"
+      "title": "Stone Island Culture"
     }
   ],
   "social": {
-    "instagram": "https://instagram.com/barboss_room",
-    "telegram": "https://t.me/barboss_room",
-    "whatsapp": "+79991234567"
+    "instagram": [
+      "https://instagram.com/barbos_room",
+      "https://instagram.com/barbos_room_reserve",
+      "https://instagram.com/barbos_delivery"
+    ],
+    "telegram": "https://t.me/barbos_room",
+    "telegram_shop": "https://t.me/barbos_shop",
+    "telegram_bot": "https://t.me/Barbooss_bot"
   },
   "about": {
-    "title": "About Barboss Room",
-    "story": "Founded in 2020, Barboss Room emerged from Moscow's underground streetwear scene. We're not just another retailer – we're curators of authentic premium streetwear culture.",
-    "mission": "Our mission is to bring genuine Stone Island, C.P. Company, and other iconic brands to those who understand the difference between fashion and statement.",
+    "title": "🏬 BARBOSS SHOP 🏬",
+    "story": "Официальный поставщик премиального стритвира в Украине. Работаем только с оригинальной продукцией Stone Island, C.P. Company и других культовых брендов.",
+    "mission": "Наша миссия - предоставить квадратуре доступ к настоящему премиальному стритвиру. Только оригинал, только качество.",
     "values": [
-      "Authenticity – 100% genuine products only",
-      "Culture – Deep roots in streetwear community",
-      "Quality – Premium brands, premium service",
-      "Trust – Direct relationships with official suppliers"
+      "✅ 100% оригинальная продукция",
+      "✅ Прямые поставки от официальных дистрибьюторов",
+      "✅ Worldwide shipping 🌎",
+      "❌ NOT SHIP TO russia 🇷🇺",
+      "🇺🇦 Поддержка Украины"
     ],
-    "team": "Our team consists of streetwear enthusiasts who live and breathe the culture. We personally select every piece in our collection."
+    "team": "Команда профессионалов, которые живут стритвир культурой. Квадратура знает - мы работаем для вас.",
+    "slogan": "Всім мирного неба над головою, бережіть себе 🫡"
   },
   "delivery": {
-    "title": "Delivery & Payment",
+    "title": "Доставка и оплата",
     "methods": [
-      "Express delivery across Russia (1-3 days)",
-      "International shipping available",
-      "Free delivery on orders over $500"
+      "✅ Worldwide shipping 🌎",
+      "Доставка по Украине - Новая Почта, УкрПочта",
+      "Международная доставка - DHL, FedEx",
+      "Самовывоз в Киеве"
     ],
     "payment": [
-      "Secure online payment",
-      "Cryptocurrency accepted",
-      "Cash on delivery in Moscow"
-    ]
+      "Безналичный расчет",
+      "Наложенный платеж",
+      "Криптовалюта",
+      "Monobank, ПриватБанк"
+    ],
+    "important": "❌ NOT SHIP TO russia 🇷🇺"
+  },
+  "contacts": {
+    "address": "🇺🇦 Україна, м.Київ, вул. Шота Руставели 27Б 📍",
+    "telegram": "@barbos_shop",
+    "telegram_channel": "@barbos_room",
+    "instagram": "@barbos_room",
+    "workHours": "Пн-Сб: 11:00 - 20:00",
+    "message": "✏️ По всім питанням пишіть: @barbos_shop"
   }
 }

@@ -144,17 +144,24 @@ function loadLookbook() {
 }
 
 function createProductCard(product) {
+    const soldClass = product.sold ? 'sold' : '';
+    const priceDisplay = product.priceOnRequest 
+        ? '<span class="price-on-request">✏️ Цена по запросу</span>'
+        : product.sold 
+        ? '<span class="product-price">❌ ПРОДАНО</span>'
+        : `<div class="product-price">${product.price} ${product.currency || 'грн'}</div>`;
+    
     return `
-        <div class="product-card" onclick="goToProduct('${product.id}')">
+        <div class="product-card ${soldClass}" onclick="${!product.sold ? `goToProduct('${product.id}')` : 'return false;'}">
             <div class="product-image">
-                ${product.new ? '<span class="product-badge">NEW</span>' : ''}
-                ${product.bestseller && !product.new ? '<span class="product-badge">BESTSELLER</span>' : ''}
+                ${product.new && !product.sold ? '<span class="product-badge">NEW</span>' : ''}
+                ${product.sold ? '<span class="product-badge" style="background: red;">SOLD</span>' : ''}
                 <img src="${product.img}" alt="${product.name}" loading="lazy">
             </div>
             <div class="product-info">
                 <div class="product-brand">${product.brand}</div>
                 <h3 class="product-name">${product.name}</h3>
-                <div class="product-price">$${product.price}</div>
+                ${priceDisplay}
             </div>
         </div>
     `;
@@ -435,7 +442,17 @@ function loadProductDetails(product) {
     // Update product info
     document.getElementById('productBrand').textContent = product.brand;
     document.getElementById('productTitle').textContent = product.name;
-    document.getElementById('productPrice').textContent = `$${product.price}`;
+    
+    // Handle price display
+    const priceElement = document.getElementById('productPrice');
+    if (product.sold) {
+        priceElement.innerHTML = '<span style="color: red;">❌ ПРОДАНО/SOLD ❌</span>';
+    } else if (product.priceOnRequest) {
+        priceElement.innerHTML = '<span style="color: var(--color-ukraine-yellow);">✏️ Цена по запросу</span>';
+    } else {
+        priceElement.textContent = `${product.price} ${product.currency || 'грн'} 🇺🇦`;
+    }
+    
     document.getElementById('productDescription').textContent = product.description;
     
     // Show/hide new badge
