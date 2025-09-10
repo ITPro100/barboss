@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Barboss Room</title>
+    <meta name="description" content="Shop premium streetwear from Stone Island, C.P. Company, and more.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-dark" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">BARBOSS ROOM</span>
+                </a>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="shop.html" class="active">Shop</a></li>
+                    <li><a href="index.html#lookbook">Lookbook</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contacts.html">Contacts</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shop Header -->
+    <section class="shop-header">
+        <div class="container">
+            <h1 class="page-title">Shop</h1>
+            <p class="page-subtitle">Premium streetwear collection</p>
+        </div>
+    </section>
+
+    <!-- Shop Content -->
+    <section class="shop-content">
+        <div class="container">
+            <div class="shop-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar" id="filtersSidebar">
+                    <div class="filters-header">
+                        <h3>Filters</h3>
+                        <button class="clear-filters" id="clearFilters">Clear All</button>
+                    </div>
+                    
+                    <!-- Category Filter -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Category</h4>
+                        <div class="filter-options" id="categoryFilter">
+                            <label class="filter-option">
+                                <input type="checkbox" value="jackets">
+                                <span>Jackets</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="hoodies">
+                                <span>Hoodies</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="pants">
+                                <span>Pants</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="accessories">
+                                <span>Accessories</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Brand Filter -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Brand</h4>
+                        <div class="filter-options" id="brandFilter">
+                            <!-- Brands will be loaded from JSON -->
+                        </div>
+                    </div>
+
+                    <!-- Price Filter -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Price</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="radio" name="price" value="0-500">
+                                <span>Under $500</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="price" value="500-1000">
+                                <span>$500 - $1000</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="price" value="1000+">
+                                <span>Over $1000</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Size Filter -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Size</h4>
+                        <div class="size-grid" id="sizeFilter">
+                            <button class="size-option" data-size="S">S</button>
+                            <button class="size-option" data-size="M">M</button>
+                            <button class="size-option" data-size="L">L</button>
+                            <button class="size-option" data-size="XL">XL</button>
+                            <button class="size-option" data-size="XXL">XXL</button>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Products Grid -->
+                <div class="shop-main">
+                    <!-- Mobile Filter Toggle -->
+                    <button class="mobile-filter-toggle" id="mobileFilterToggle">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                            <path d="M3 7h14M7 12h6M5 17h10" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Filters
+                    </button>
+
+                    <!-- Sort Options -->
+                    <div class="sort-bar">
+                        <div class="results-count">
+                            <span id="resultsCount">0</span> products
+                        </div>
+                        <select class="sort-select" id="sortSelect">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name">Name: A to Z</option>
+                        </select>
+                    </div>
+
+                    <!-- Products Grid -->
+                    <div class="products-grid shop-grid" id="productsGrid">
+                        <!-- Products will be loaded from JSON -->
+                    </div>
+
+                    <!-- No Results -->
+                    <div class="no-results" id="noResults" style="display: none;">
+                        <h3>No products found</h3>
+                        <p>Try adjusting your filters</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-title">BARBOSS ROOM</h3>
+                    <p class="footer-description">Premium streetwear. Authentic culture.</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/barboss_room" target="_blank" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12c0-3.403 2.759-6.162 6.162-6.162s6.162 2.759 6.162 6.162-2.759 6.162-6.162 6.162-6.162-2.759-6.162-6.162zm1.621 0c0 2.507 2.034 4.541 4.541 4.541s4.541-2.034 4.541-4.541-2.034-4.541-4.541-4.541-4.541 2.034-4.541 4.541zm9.198-6.396c0 .795.646 1.44 1.44 1.44s1.44-.646 1.44-1.44-.646-1.44-1.44-1.44-1.44.646-1.44 1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://t.me/barboss_room" target="_blank" aria-label="Telegram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121L8.32 13.617l-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Shop</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html?cat=jackets">Jackets</a></li>
+                        <li><a href="shop.html?cat=hoodies">Hoodies</a></li>
+                        <li><a href="shop.html?cat=pants">Pants</a></li>
+                        <li><a href="shop.html?cat=accessories">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Info</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contacts.html">Contacts</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+79991234567">+7 999 123 45 67</a></li>
+                        <li><a href="https://t.me/barboss_room">@barboss_room</a></li>
+                        <li><a href="mailto:info@barbossroom.com">info@barbossroom.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Barboss Room. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+{
+  "brand": {
+    "name": "Barboss Room",
+    "slogan": "Premium streetwear. For those who hustle.",
+    "description": "Curated selection of authentic premium streetwear from Stone Island, C.P. Company, and other iconic brands.",
+    "phone": "+7 999 123 45 67",
+    "telegram": "@barboss_room",
+    "address": "Moscow, Russia",
+    "email": "info@barbossroom.com"
+  },
+  "navigation": [
+    {"name": "Shop", "url": "shop.html"},
+    {"name": "About", "url": "about.html"},
+    {"name": "Lookbook", "url": "#lookbook"},
+    {"name": "Contacts", "url": "contacts.html"}
+  ],
+  "categories": [
+    {
+      "id": "jackets",
+      "name": "Куртки",
+      "nameEn": "Jackets",
+      "img": "/assets/img/category-jackets.jpg",
+      "url": "shop.html?cat=jackets"
+    },
+    {
+      "id": "hoodies",
+      "name": "Худи",
+      "nameEn": "Hoodies",
+      "img": "/assets/img/category-hoodies.jpg",
+      "url": "shop.html?cat=hoodies"
+    },
+    {
+      "id": "pants",
+      "name": "Штаны",
+      "nameEn": "Pants",
+      "img": "/assets/img/category-pants.jpg",
+      "url": "shop.html?cat=pants"
+    },
+    {
+      "id": "accessories",
+      "name": "Аксессуары",
+      "nameEn": "Accessories",
+      "img": "/assets/img/category-accessories.jpg",
+      "url": "shop.html?cat=accessories"
+    }
+  ],
+  "brands": [
+    "Stone Island",
+    "C.P. Company",
+    "Ma.Strum",
+    "Peaceful Hooligan",
+    "Weekend Offender"
+  ],
+  "products": [
+    {
+      "id": "si-jacket-001",
+      "name": "Stone Island Ghost Piece Jacket",
+      "brand": "Stone Island",
+      "category": "jackets",
+      "price": 1450,
+      "sizes": ["S", "M", "L", "XL"],
+      "img": "/assets/products/si-jacket-001.jpg",
+      "gallery": [
+        "/assets/products/si-jacket-001.jpg",
+        "/assets/products/si-jacket-001-2.jpg",
+        "/assets/products/si-jacket-001-3.jpg"
+      ],
+      "description": "Iconic Ghost Piece from Stone Island's FW24 collection. Water-resistant Raso-R 3L fabric with removable badge.",
+      "new": true,
+      "bestseller": true
+    },
+    {
+      "id": "cp-hoodie-001",
+      "name": "C.P. Company Lens Hoodie",
+      "brand": "C.P. Company",
+      "category": "hoodies",
+      "price": 480,
+      "sizes": ["M", "L", "XL", "XXL"],
+      "img": "/assets/products/cp-hoodie-001.jpg",
+      "gallery": [
+        "/assets/products/cp-hoodie-001.jpg",
+        "/assets/products/cp-hoodie-001-2.jpg"
+      ],
+      "description": "Classic C.P. Company hoodie with signature lens detail on the hood. 100% cotton fleece.",
+      "new": true,
+      "bestseller": false
+    },
+    {
+      "id": "si-pants-001",
+      "name": "Stone Island Cargo Pants",
+      "brand": "Stone Island",
+      "category": "pants",
+      "price": 620,
+      "sizes": ["30", "32", "34", "36"],
+      "img": "/assets/products/si-pants-001.jpg",
+      "gallery": [
+        "/assets/products/si-pants-001.jpg"
+      ],
+      "description": "Technical cargo pants with multiple pockets and adjustable details. Stretch cotton gabardine.",
+      "new": false,
+      "bestseller": true
+    },
+    {
+      "id": "si-beanie-001",
+      "name": "Stone Island Wool Beanie",
+      "brand": "Stone Island",
+      "category": "accessories",
+      "price": 145,
+      "sizes": ["One Size"],
+      "img": "/assets/products/si-beanie-001.jpg",
+      "gallery": [
+        "/assets/products/si-beanie-001.jpg"
+      ],
+      "description": "Premium wool beanie with removable Stone Island badge. Made in Italy.",
+      "new": false,
+      "bestseller": true
+    },
+    {
+      "id": "cp-jacket-002",
+      "name": "C.P. Company Metropolis Series Jacket",
+      "brand": "C.P. Company",
+      "category": "jackets",
+      "price": 1280,
+      "sizes": ["S", "M", "L"],
+      "img": "/assets/products/cp-jacket-002.jpg",
+      "gallery": [
+        "/assets/products/cp-jacket-002.jpg"
+      ],
+      "description": "Urban protection jacket from Metropolis Series. Pro-Tek fabric with taped seams.",
+      "new": true,
+      "bestseller": false
+    },
+    {
+      "id": "ms-hoodie-001",
+      "name": "Ma.Strum Training Hoodie",
+      "brand": "Ma.Strum",
+      "category": "hoodies",
+      "price": 320,
+      "sizes": ["S", "M", "L", "XL"],
+      "img": "/assets/products/ms-hoodie-001.jpg",
+      "gallery": [
+        "/assets/products/ms-hoodie-001.jpg"
+      ],
+      "description": "Military-inspired training hoodie with Ma.Strum's signature detailing.",
+      "new": false,
+      "bestseller": false
+    }
+  ],
+  "lookbook": [
+    {
+      "img": "/assets/lookbook/look-01.jpg",
+      "title": "Urban Explorer"
+    },
+    {
+      "img": "/assets/lookbook/look-02.jpg",
+      "title": "Night Runner"
+    },
+    {
+      "img": "/assets/lookbook/look-03.jpg",
+      "title": "City Warrior"
+    },
+    {
+      "img": "/assets/lookbook/look-04.jpg",
+      "title": "Street Legend"
+    },
+    {
+      "img": "/assets/lookbook/look-05.jpg",
+      "title": "Concrete Jungle"
+    },
+    {
+      "img": "/assets/lookbook/look-06.jpg",
+      "title": "Shadow Walker"
+    }
+  ],
+  "social": {
+    "instagram": "https://instagram.com/barboss_room",
+    "telegram": "https://t.me/barboss_room",
+    "whatsapp": "+79991234567"
+  },
+  "about": {
+    "title": "About Barboss Room",
+    "story": "Founded in 2020, Barboss Room emerged from Moscow's underground streetwear scene. We're not just another retailer – we're curators of authentic premium streetwear culture.",
+    "mission": "Our mission is to bring genuine Stone Island, C.P. Company, and other iconic brands to those who understand the difference between fashion and statement.",
+    "values": [
+      "Authenticity – 100% genuine products only",
+      "Culture – Deep roots in streetwear community",
+      "Quality – Premium brands, premium service",
+      "Trust – Direct relationships with official suppliers"
+    ],
+    "team": "Our team consists of streetwear enthusiasts who live and breathe the culture. We personally select every piece in our collection."
+  },
+  "delivery": {
+    "title": "Delivery & Payment",
+    "methods": [
+      "Express delivery across Russia (1-3 days)",
+      "International shipping available",
+      "Free delivery on orders over $500"
+    ],
+    "payment": [
+      "Secure online payment",
+      "Cryptocurrency accepted",
+      "Cash on delivery in Moscow"
+    ]
+  }
+}
