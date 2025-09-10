@@ -57,6 +57,13 @@
       "nameEn": "Shorts",
       "img": "/assets/img/category-shorts.jpg",
       "url": "shop.html?cat=shorts"
+    },
+    {
+      "id": "sweatshirts",
+      "name": "Світшоти",
+      "nameEn": "Sweatshirts",
+      "img": "/assets/img/category-sweatshirts.jpg",
+      "url": "shop.html?cat=sweatshirts"
     }
   ],
   "brands": [
@@ -279,6 +286,80 @@
       "description": "❌ПРОДАНО/SOLD❌",
       "new": false,
       "sold": true
+    },
+    {
+      "id": "si-shadow-jacket",
+      "name": "STONE ISLAND SHADOW PROJECT TACTICAL JACKET",
+      "brand": "Stone Island Shadow Project",
+      "category": "jackets",
+      "price": 54999,
+      "currency": "грн",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "img": "/assets/products/si-shadow-jacket.jpg",
+      "gallery": [
+        "/assets/products/si-shadow-jacket.jpg"
+      ],
+      "description": "STONE ISLAND SHADOW PROJECT TACTICAL JACKET. Advanced technical construction with multiple utility pockets. Premium materials and innovative design.",
+      "new": true,
+      "sold": false
+    },
+    {
+      "id": "cp-parka",
+      "name": "C.P. COMPANY GOGGLE HOOD PARKA",
+      "brand": "C.P. Company",
+      "category": "jackets",
+      "price": 42999,
+      "currency": "грн",
+      "sizes": [
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "img": "/assets/products/cp-parka.jpg",
+      "gallery": [
+        "/assets/products/cp-parka.jpg"
+      ],
+      "description": "C.P. COMPANY GOGGLE HOOD PARKA. Iconic design with signature lens detail. Premium winter protection with luxury style.",
+      "new": true,
+      "sold": false
+    },
+    {
+      "id": "si-sweatshirt-olive",
+      "name": "STONE ISLAND GARMENT DYED SWEATSHIRT",
+      "brand": "Stone Island",
+      "category": "sweatshirts",
+      "price": 18999,
+      "currency": "грн",
+      "sizes": {
+        "Olive": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "Black": [
+          "M",
+          "L",
+          "XL"
+        ],
+        "Navy": [
+          "L",
+          "XL"
+        ]
+      },
+      "img": "/assets/products/si-sweatshirt-olive.jpg",
+      "gallery": [
+        "/assets/products/si-sweatshirt-olive.jpg"
+      ],
+      "description": "STONE ISLAND GARMENT DYED COTTON SWEATSHIRT. Classic design with compass badge. Premium cotton construction.",
+      "new": true,
+      "sold": false
     }
   ],
   "lookbook": [
