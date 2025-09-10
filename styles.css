@@ -251,6 +251,22 @@ img {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    overflow: hidden;
+}
+
+/* Parallax for desktop */
+@media (min-width: 768px) {
+    .hero-banner {
+        background-attachment: fixed;
+    }
+}
+
+/* Better mobile performance */
+@media (max-width: 767px) {
+    .hero-banner {
+        background-attachment: scroll;
+        background-position: center center;
+    }
 }
 
 .hero-overlay {
@@ -397,6 +413,48 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 32px;
+}
+
+/* Image loading states */
+.product-card.loading {
+    position: relative;
+}
+
+.product-card.loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        var(--color-graphite) 25%, 
+        var(--color-dark-gray) 50%, 
+        var(--color-graphite) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    z-index: 1;
+    border-radius: 8px;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.product-card.loaded {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .horizontal-scroll {
@@ -1555,20 +1613,102 @@ section {
     }
 
     .hero-title {
-        font-size: clamp(2rem, 8vw, 3rem);
+        font-size: clamp(1.75rem, 7vw, 2.5rem);
+        line-height: 1.1;
+    }
+    
+    .hero-subtitle {
+        font-size: 14px;
+    }
+    
+    .hero-content {
+        padding: 0 15px;
+    }
+    
+    .hero-info p {
+        font-size: 12px;
     }
 
     .categories-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .category-card {
+        height: 200px;
+    }
+    
+    .category-title {
+        font-size: 18px;
     }
 
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
+        gap: 12px;
+    }
+    
+    .product-card {
+        border-radius: 6px;
+    }
+    
+    .product-image {
+        height: 250px;
+    }
+    
+    .product-info {
+        padding: 12px;
+    }
+    
+    .product-name {
+        font-size: 14px;
+        line-height: 1.2;
+    }
+    
+    .product-price {
+        font-size: 16px;
+    }
+    
+    .product-brand {
+        font-size: 10px;
+    }
+    
+    /* Horizontal scroll optimization */
+    .horizontal-scroll {
+        gap: 12px;
+        padding-bottom: 12px;
+        scroll-padding: 12px;
+        scroll-snap-type: x mandatory;
+    }
+    
+    .horizontal-scroll .product-card {
+        min-width: 200px;
+        scroll-snap-align: start;
+    }
+    
+    /* Lookbook mobile */
+    .lookbook-gallery {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .lookbook-item {
+        height: 300px;
+    }
+    
+    /* Better touch targets */
+    .btn {
+        min-height: 44px;
+        padding: 12px 24px;
+    }
+    
+    .size-option {
+        min-height: 44px;
+        min-width: 44px;
     }
 
     .footer-content {
         grid-template-columns: 1fr;
+        gap: 24px;
     }
 
     .contact-methods {
@@ -1586,15 +1726,44 @@ section {
 
     .gallery-thumbs {
         grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+    }
+    
+    .gallery-thumb img {
+        height: 80px;
     }
 
     .product-features {
         grid-template-columns: 1fr;
+        gap: 12px;
     }
 
     .tabs-header {
         overflow-x: auto;
-        gap: 16px;
+        gap: 8px;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .tab-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    
+    /* Performance optimizations */
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    .product-card:hover {
+        transform: none;
+    }
+    
+    /* Disable parallax on mobile for performance */
+    .hero-banner,
+    .lookbook-item,
+    .category-card img {
+        transform: none !important;
     }
 }
 
@@ -1605,11 +1774,82 @@ section {
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
     .btn-large {
         padding: 14px 32px;
         font-size: 14px;
     }
+    
+    .product-card {
+        max-width: 100%;
+    }
+    
+    .product-image {
+        height: 350px;
+    }
+}
+
+/* Touch feedback */
+.touch-device .touch-active {
+    transform: scale(0.98);
+    opacity: 0.9;
+}
+
+.touch-device .btn:active,
+.touch-device .product-card:active {
+    transform: scale(0.98);
+}
+
+/* Loading states */
+.loading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--color-ukraine-yellow);
+    z-index: 9999;
+    transition: width 0.3s ease;
+}
+
+/* Optimized images for slow connections */
+.slow-connection .product-image {
+    filter: blur(0);
+    transition: filter 0.3s;
+}
+
+.slow-connection .product-image.loading {
+    filter: blur(5px);
+}
+
+/* Better image aspect ratios */
+.product-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.category-card img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.lookbook-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* Parallax improvements */
+.parallax-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.parallax-element {
+    will-change: transform;
+    transition: transform 0.1s linear;
 }

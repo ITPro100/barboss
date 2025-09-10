@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadContent();
     initializeNavigation();
     initializePageContent();
+    initializeParallax();
+    initializeLazyLoading();
+    initializeImageOptimization();
 });
 
 // Load content from JSON
@@ -180,17 +183,57 @@ function initializeSlider() {
     if (!slider || !prevBtn || !nextBtn) return;
 
     let scrollAmount = 0;
-    const scrollStep = 304; // Card width + gap
+    const isMobile = window.innerWidth <= 768;
+    const scrollStep = isMobile ? 212 : 304; // Responsive scroll step
+
+    // Touch support for mobile
+    let startX = 0;
+    let scrollLeft = 0;
+    let isDown = false;
+
+    slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+        slider.style.cursor = 'grabbing';
+    });
+
+    slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.style.cursor = 'grab';
+    });
+
+    slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.style.cursor = 'grab';
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2;
+        slider.scrollLeft = scrollLeft - walk;
+    });
+
+    // Touch events for mobile
+    slider.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('touchmove', (e) => {
+        const x = e.touches[0].pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2;
+        slider.scrollLeft = scrollLeft - walk;
+    });
 
     prevBtn.addEventListener('click', () => {
-        scrollAmount = Math.max(0, scrollAmount - scrollStep);
-        slider.style.transform = `translateX(-${scrollAmount}px)`;
+        slider.scrollBy({ left: -scrollStep, behavior: 'smooth' });
     });
 
     nextBtn.addEventListener('click', () => {
-        const maxScroll = slider.scrollWidth - slider.clientWidth;
-        scrollAmount = Math.min(maxScroll, scrollAmount + scrollStep);
-        slider.style.transform = `translateX(-${scrollAmount}px)`;
+        slider.scrollBy({ left: scrollStep, behavior: 'smooth' });
     });
 }
 
@@ -687,21 +730,152 @@ function debounce(func, wait) {
     };
 }
 
-// Lazy load images
-if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.add('loaded');
-                observer.unobserve(img);
+// ============================================
+// PARALLAX & IMAGE OPTIMIZATION
+// ============================================
+
+function initializeParallax() {
+    // Parallax effect for hero and sections
+    if (window.innerWidth > 768) {
+        let ticking = false;
+        
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            
+            // Hero parallax
+            const hero = document.querySelector('.hero-banner');
+            if (hero) {
+                const speed = 0.5;
+                hero.style.transform = `translateY(${scrolled * speed}px)`;
+            }
+            
+            // Lookbook parallax
+            const lookbookItems = document.querySelectorAll('.lookbook-item');
+            lookbookItems.forEach((item, index) => {
+                const rect = item.getBoundingClientRect();
+                if (rect.bottom >= 0 && rect.top <= window.innerHeight) {
+                    const speed = 0.2 + (index * 0.05);
+                    const yPos = -(scrolled * speed);
+                    item.style.transform = `translateY(${yPos}px)`;
+                }
+            });
+            
+            // Category cards parallax
+            const categoryCards = document.querySelectorAll('.category-card');
+            categoryCards.forEach((card, index) => {
+                const rect = card.getBoundingClientRect();
+                if (rect.bottom >= 0 && rect.top <= window.innerHeight) {
+                    const speed = 0.1;
+                    const yPos = (rect.top * speed);
+                    const img = card.querySelector('img');
+                    if (img) {
+                        img.style.transform = `scale(1.1) translateY(${yPos}px)`;
+                    }
+                }
+            });
+            
+            ticking = false;
+        }
+        
+        function requestTick() {
+            if (!ticking) {
+                window.requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        }
+        
+        window.addEventListener('scroll', requestTick);
+    }
+}
+
+function initializeLazyLoading() {
+    // Lazy load images with fade-in effect
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    
+                    // Create a new image to preload
+                    const tempImg = new Image();
+                    tempImg.onload = function() {
+                        img.src = this.src;
+                        img.classList.add('loaded');
+                        
+                        // Add fade-in animation
+                        img.style.opacity = '0';
+                        img.style.transition = 'opacity 0.5s ease-in-out';
+                        setTimeout(() => {
+                            img.style.opacity = '1';
+                        }, 10);
+                    };
+                    
+                    tempImg.src = img.dataset.src || img.src;
+                    observer.unobserve(img);
+                }
+            });
+        }, {
+            rootMargin: '50px 0px',
+            threshold: 0.01
+        });
+        
+        // Observe all images
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            if (!img.complete) {
+                imageObserver.observe(img);
             }
         });
+    }
+}
+
+function initializeImageOptimization() {
+    // Responsive image loading based on viewport
+    function updateImageSources() {
+        const isMobile = window.innerWidth <= 768;
+        const isRetina = window.devicePixelRatio > 1;
+        
+        document.querySelectorAll('.product-image img').forEach(img => {
+            if (!img.dataset.optimized) {
+                const src = img.src || img.dataset.src;
+                
+                // Skip if already optimized
+                if (src.includes('?w=')) return;
+                
+                // Add width parameter for responsive loading
+                const width = isMobile ? 400 : (isRetina ? 1200 : 800);
+                const optimizedSrc = src + `?w=${width}&q=85`;
+                
+                if (img.dataset.src) {
+                    img.dataset.src = optimizedSrc;
+                } else {
+                    img.src = optimizedSrc;
+                }
+                
+                img.dataset.optimized = 'true';
+            }
+        });
+    }
+    
+    // Initial optimization
+    updateImageSources();
+    
+    // Re-optimize on resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(updateImageSources, 250);
     });
     
-    document.addEventListener('DOMContentLoaded', () => {
-        const lazyImages = document.querySelectorAll('img[data-src]');
-        lazyImages.forEach(img => imageObserver.observe(img));
+    // Add loading animation
+    document.querySelectorAll('.product-card').forEach(card => {
+        const img = card.querySelector('img');
+        if (img && !img.complete) {
+            card.classList.add('loading');
+            img.addEventListener('load', () => {
+                card.classList.remove('loading');
+                card.classList.add('loaded');
+            });
+        }
     });
 }
